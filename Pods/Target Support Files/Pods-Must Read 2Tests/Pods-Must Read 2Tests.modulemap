@@ -1,0 +1,6 @@
+framework module Pods_Must_Read_2Tests {
+  umbrella header "Pods-Must Read 2Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
