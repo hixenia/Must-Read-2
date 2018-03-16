@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Test!\nAnd it really works!")
+        print("Test!\nAnd it really works!\nAnd now we have CocoaPods!")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
