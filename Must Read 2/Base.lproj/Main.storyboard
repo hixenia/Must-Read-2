@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="47Y-iL-fg4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GJI-Wu-guj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -59,16 +59,8 @@
                                 <state key="normal" title="Already signed up? Log in!">
                                     <color key="titleColor" red="0.21092513203620911" green="0.38287872076034546" blue="0.62362486124038696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7b-pe-phX">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" id="1WX-Zh-rZm"/>
-                                    <constraint firstAttribute="height" constant="30" id="VXt-Wk-jFf"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="gHA-fK-1Mj" kind="presentation" identifier="chanheMode" modalTransitionStyle="flipHorizontal" id="HkC-kp-hDg"/>
+                                    <action selector="changeModeButtonPressed:" destination="gHA-fK-1Mj" eventType="touchUpInside" id="sxN-Rd-a16"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,7 +71,6 @@
                             <constraint firstItem="LoV-8p-2NW" firstAttribute="trailing" secondItem="TrO-Ck-Gsb" secondAttribute="trailing" constant="16" id="3PR-0p-l9L"/>
                             <constraint firstItem="D0B-Xc-e0n" firstAttribute="leading" secondItem="LoV-8p-2NW" secondAttribute="leading" constant="16" id="3YO-P6-kZK"/>
                             <constraint firstItem="gTK-fP-ghn" firstAttribute="leading" secondItem="LoV-8p-2NW" secondAttribute="leading" constant="16" id="8rH-ZH-hDf"/>
-                            <constraint firstItem="G7b-pe-phX" firstAttribute="top" secondItem="dCl-Xy-Exz" secondAttribute="top" id="BKq-BW-nNi"/>
                             <constraint firstItem="LoV-8p-2NW" firstAttribute="trailing" secondItem="ITa-Je-KSM" secondAttribute="trailing" constant="16" id="Bbv-J3-uae"/>
                             <constraint firstItem="D0B-Xc-e0n" firstAttribute="top" secondItem="TrO-Ck-Gsb" secondAttribute="bottom" constant="16" id="BeL-ii-TFP"/>
                             <constraint firstItem="gTK-fP-ghn" firstAttribute="top" secondItem="LoV-8p-2NW" secondAttribute="top" constant="8" id="F66-Sd-U2X"/>
@@ -87,7 +78,6 @@
                             <constraint firstItem="ITa-Je-KSM" firstAttribute="leading" secondItem="LoV-8p-2NW" secondAttribute="leading" constant="16" id="l3R-AR-bnb"/>
                             <constraint firstItem="ITa-Je-KSM" firstAttribute="top" secondItem="gTK-fP-ghn" secondAttribute="bottom" constant="8" id="mx8-yB-fLX"/>
                             <constraint firstItem="TrO-Ck-Gsb" firstAttribute="top" secondItem="ITa-Je-KSM" secondAttribute="bottom" constant="16" id="rYe-B9-GQ8"/>
-                            <constraint firstItem="G7b-pe-phX" firstAttribute="leading" secondItem="dCl-Xy-Exz" secondAttribute="leading" id="uiW-6Y-N6O"/>
                             <constraint firstItem="TrO-Ck-Gsb" firstAttribute="leading" secondItem="LoV-8p-2NW" secondAttribute="leading" constant="16" id="v7v-MZ-PmR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LoV-8p-2NW"/>
@@ -97,9 +87,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome to Must Read!" id="TOq-n0-dq4"/>
                     <connections>
-                        <outlet property="passwordTextField" destination="ITa-Je-KSM" id="ijo-On-79y"/>
-                        <outlet property="signUpButton" destination="TrO-Ck-Gsb" id="GUl-MC-3IR"/>
-                        <outlet property="usernameTextField" destination="gTK-fP-ghn" id="4Wi-C9-nlN"/>
+                        <outlet property="changeModeButton" destination="D0B-Xc-e0n" id="Nhd-ma-sq3"/>
+                        <outlet property="passwordTextField" destination="ITa-Je-KSM" id="LK7-3E-IiR"/>
+                        <outlet property="signUpButton" destination="TrO-Ck-Gsb" id="h3H-Q7-ENn"/>
+                        <outlet property="usernameTextField" destination="gTK-fP-ghn" id="ohg-n7-gww"/>
+                        <segue destination="47Y-iL-fg4" kind="presentation" identifier="changeMode" modalTransitionStyle="flipHorizontal" id="P4u-u9-5qg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mos-2I-nlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,7 +101,67 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1605.5999999999999" y="87.706146926536732"/>
+            <point key="canvasLocation" x="678" y="-634"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="MRF-Rh-AeC">
+            <objects>
+                <viewController id="GJI-Wu-guj" customClass="MR2LaunchViewController" customModule="Must_Read_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qqG-Bp-p2o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpi-Xd-fPI">
+                                <rect key="frame" x="87.5" y="323" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0QA-QG-k9V"/>
+                                    <constraint firstAttribute="width" constant="200" id="6CS-a3-Zq4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kpi-Xd-fPI" firstAttribute="centerX" secondItem="qqG-Bp-p2o" secondAttribute="centerX" id="ZQd-st-dbW"/>
+                            <constraint firstItem="Kpi-Xd-fPI" firstAttribute="centerY" secondItem="qqG-Bp-p2o" secondAttribute="centerY" id="acz-Wg-u0u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5VS-Bt-xEL"/>
+                    </view>
+                    <connections>
+                        <segue destination="47Y-iL-fg4" kind="presentation" identifier="openAuthorization" modalTransitionStyle="coverVertical" id="UCO-c3-2Ko"/>
+                        <segue destination="hEu-Dc-N4N" kind="presentation" identifier="openApp" id="McH-z6-q0a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mD1-EQ-IVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1124" y="-228"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="8sj-8w-SpQ">
+            <objects>
+                <viewController id="hEu-Dc-N4N" customClass="MR2MainViewController" customModule="Must_Read_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IiJ-Bs-tPx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA8-5F-ojw">
+                                <rect key="frame" x="16" y="20" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="hEu-Dc-N4N" eventType="touchUpInside" id="Kqz-6O-9Ge"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="e9e-CV-cMQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fK-Wu-yHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170.40000000000001" y="187.55622188905548"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="31d-f5-b7H">
@@ -127,7 +179,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uY9-7m-7cW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="88"/>
+            <point key="canvasLocation" x="-169" y="-633"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UCO-c3-2Ko"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             installation.saveInBackground {
                 (success: Bool, error: Error?) in
                 if (success) {
-                    print("You have successfully connected your app to Back4App!")
+                 //   print("You have successfully connected your app to Back4App!")
                 } else {
                     if let myError = error{
                         print(myError.localizedDescription)
