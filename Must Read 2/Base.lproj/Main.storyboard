@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--Welcome to Must Read!-->
         <scene sceneID="BJp-0R-X38">
             <objects>
-                <viewController id="gHA-fK-1Mj" customClass="MR2SignUpViewController" customModule="Must_Read_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gHA-fK-1Mj" customClass="MR2AuthorizationViewController" customModule="Must_Read_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCl-Xy-Exz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,10 +42,10 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrO-Ck-Gsb">
-                                <rect key="frame" x="16" y="156" width="343" height="30"/>
+                                <rect key="frame" x="16" y="156" width="343" height="44"/>
                                 <color key="backgroundColor" red="0.0099297408010000001" green="0.1572742462" blue="0.45473077890000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="UeF-yL-KK6"/>
+                                    <constraint firstAttribute="height" constant="44" id="UeF-yL-KK6"/>
                                 </constraints>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,18 +54,40 @@
                                     <action selector="signUpButtonPressed:" destination="gHA-fK-1Mj" eventType="touchUpInside" id="tjz-20-JUR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0B-Xc-e0n">
+                                <rect key="frame" x="16" y="216" width="343" height="30"/>
+                                <state key="normal" title="Already signed up? Log in!">
+                                    <color key="titleColor" red="0.21092513203620911" green="0.38287872076034546" blue="0.62362486124038696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7b-pe-phX">
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="1WX-Zh-rZm"/>
+                                    <constraint firstAttribute="height" constant="30" id="VXt-Wk-jFf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="gHA-fK-1Mj" kind="presentation" identifier="chanheMode" modalTransitionStyle="flipHorizontal" id="HkC-kp-hDg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="LoV-8p-2NW" firstAttribute="trailing" secondItem="D0B-Xc-e0n" secondAttribute="trailing" constant="16" id="0O0-Jq-DWq"/>
                             <constraint firstItem="LoV-8p-2NW" firstAttribute="trailing" secondItem="TrO-Ck-Gsb" secondAttribute="trailing" constant="16" id="3PR-0p-l9L"/>
+                            <constraint firstItem="D0B-Xc-e0n" firstAttribute="leading" secondItem="LoV-8p-2NW" secondAttribute="leading" constant="16" id="3YO-P6-kZK"/>
                             <constraint firstItem="gTK-fP-ghn" firstAttribute="leading" secondItem="LoV-8p-2NW" secondAttribute="leading" constant="16" id="8rH-ZH-hDf"/>
+                            <constraint firstItem="G7b-pe-phX" firstAttribute="top" secondItem="dCl-Xy-Exz" secondAttribute="top" id="BKq-BW-nNi"/>
                             <constraint firstItem="LoV-8p-2NW" firstAttribute="trailing" secondItem="ITa-Je-KSM" secondAttribute="trailing" constant="16" id="Bbv-J3-uae"/>
+                            <constraint firstItem="D0B-Xc-e0n" firstAttribute="top" secondItem="TrO-Ck-Gsb" secondAttribute="bottom" constant="16" id="BeL-ii-TFP"/>
                             <constraint firstItem="gTK-fP-ghn" firstAttribute="top" secondItem="LoV-8p-2NW" secondAttribute="top" constant="8" id="F66-Sd-U2X"/>
                             <constraint firstItem="LoV-8p-2NW" firstAttribute="trailing" secondItem="gTK-fP-ghn" secondAttribute="trailing" constant="16" id="PBr-hm-Amc"/>
                             <constraint firstItem="ITa-Je-KSM" firstAttribute="leading" secondItem="LoV-8p-2NW" secondAttribute="leading" constant="16" id="l3R-AR-bnb"/>
                             <constraint firstItem="ITa-Je-KSM" firstAttribute="top" secondItem="gTK-fP-ghn" secondAttribute="bottom" constant="8" id="mx8-yB-fLX"/>
                             <constraint firstItem="TrO-Ck-Gsb" firstAttribute="top" secondItem="ITa-Je-KSM" secondAttribute="bottom" constant="16" id="rYe-B9-GQ8"/>
+                            <constraint firstItem="G7b-pe-phX" firstAttribute="leading" secondItem="dCl-Xy-Exz" secondAttribute="leading" id="uiW-6Y-N6O"/>
                             <constraint firstItem="TrO-Ck-Gsb" firstAttribute="leading" secondItem="LoV-8p-2NW" secondAttribute="leading" constant="16" id="v7v-MZ-PmR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LoV-8p-2NW"/>

@@ -15,7 +15,7 @@
 		A7D86298205C558C004C1AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D86296205C558C004C1AFF /* LaunchScreen.storyboard */; };
 		A7D862A3205C558C004C1AFF /* Must_Read_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D862A2205C558C004C1AFF /* Must_Read_2Tests.swift */; };
 		A7D862AE205C558C004C1AFF /* Must_Read_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D862AD205C558C004C1AFF /* Must_Read_2UITests.swift */; };
-		A7EA82E6205C6AF700E07B8D /* MR2SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82E5205C6AF700E07B8D /* MR2SignUpViewController.swift */; };
+		A7EA82E6205C6AF700E07B8D /* MR2AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82E5205C6AF700E07B8D /* MR2AuthorizationViewController.swift */; };
 		AD9F8FABE7F844B7DF031FA3 /* Pods_Must_Read_2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7476314A66C17B7CA47A5274 /* Pods_Must_Read_2Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,7 @@
 		A7D862A9205C558C004C1AFF /* Must Read 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Must Read 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D862AD205C558C004C1AFF /* Must_Read_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Must_Read_2UITests.swift; sourceTree = "<group>"; };
 		A7D862AF205C558C004C1AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7EA82E5205C6AF700E07B8D /* MR2SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MR2SignUpViewController.swift; sourceTree = "<group>"; };
+		A7EA82E5205C6AF700E07B8D /* MR2AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MR2AuthorizationViewController.swift; sourceTree = "<group>"; };
 		BFFE7347E2C57ADF870C7786 /* Pods-Must Read 2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Must Read 2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Must Read 2UITests/Pods-Must Read 2UITests.release.xcconfig"; sourceTree = "<group>"; };
 		CD46B7A0B3B779891C129098 /* Pods-Must Read 2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Must Read 2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Must Read 2/Pods-Must Read 2.debug.xcconfig"; sourceTree = "<group>"; };
 		E079B076378C190FFB05C40B /* Pods-Must Read 2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Must Read 2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Must Read 2/Pods-Must Read 2.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D8628D205C558C004C1AFF /* AppDelegate.swift */,
-				A7EA82E5205C6AF700E07B8D /* MR2SignUpViewController.swift */,
+				A7EA82E5205C6AF700E07B8D /* MR2AuthorizationViewController.swift */,
 				A7D86291205C558C004C1AFF /* Main.storyboard */,
 				A7D86294205C558C004C1AFF /* Assets.xcassets */,
 				A7D86296205C558C004C1AFF /* LaunchScreen.storyboard */,
@@ -461,7 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D8628E205C558C004C1AFF /* AppDelegate.swift in Sources */,
-				A7EA82E6205C6AF700E07B8D /* MR2SignUpViewController.swift in Sources */,
+				A7EA82E6205C6AF700E07B8D /* MR2AuthorizationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +631,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CGLWULMA8G;
 				INFOPLIST_FILE = "Must Read 2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sircfc.Picarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -647,6 +648,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CGLWULMA8G;
 				INFOPLIST_FILE = "Must Read 2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sircfc.Picarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
