@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(with: configuration)
         saveInstallationObject()
         
+        UINavigationBar.appearance().tintColor = mustRed
+        
         return true
     }
     

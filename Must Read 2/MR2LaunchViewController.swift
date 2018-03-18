@@ -25,13 +25,23 @@ class MR2LaunchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let currentUser = PFUser.current() {
-            print("Already logged in: \(currentUser)")
+        if let _ = PFUser.current() {
             performSegue(withIdentifier: "openApp", sender: self)
         } else {
-            print("Not logged in yet")
             performSegue(withIdentifier: "openAuthorization", sender: self)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.statusBarStyle = .default
     }
 
     /*

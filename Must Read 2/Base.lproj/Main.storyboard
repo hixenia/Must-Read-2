@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kou-oK-Nqf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GJI-Wu-guj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="-1375.8620689655174"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="IVt-C4-AUP">
             <objects>
-                <viewController id="rGp-i8-w6J" sceneMemberID="viewController">
+                <viewController id="rGp-i8-w6J" customClass="MR2MainViewController" customModule="Must_Read_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hsU-ER-wgL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,12 +323,17 @@
                         <viewLayoutGuide key="safeArea" id="cMZ-7I-gww"/>
                     </view>
                     <navigationItem key="navigationItem" id="33T-nX-ASv">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="zSW-PG-qUB">
+                            <connections>
+                                <action selector="logOutButtonPressed:" destination="rGp-i8-w6J" id="OQA-8W-rBN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="(i)" id="Bac-Xs-E8g"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlQ-Hz-RGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1557.5999999999999" y="-600.44977511244383"/>
+            <point key="canvasLocation" x="582" y="-600"/>
         </scene>
         <!--Welcome to Must Read!-->
         <scene sceneID="BJp-0R-X38">
@@ -433,56 +438,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpi-Xd-fPI">
-                                <rect key="frame" x="87.5" y="323" width="200" height="21"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-5e-tjN">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="0QA-QG-k9V"/>
-                                    <constraint firstAttribute="width" constant="200" id="6CS-a3-Zq4"/>
+                                    <constraint firstAttribute="height" constant="37" id="E4S-yI-XYv"/>
+                                    <constraint firstAttribute="width" constant="37" id="H3C-OE-VCU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpi-Xd-fPI">
+                                <rect key="frame" x="87" y="286" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eg4-WX-dJd"/>
+                                    <constraint firstAttribute="height" constant="21" id="qls-2s-cHk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.82357700889999996" green="0.23529411759999999" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Kpi-Xd-fPI" firstAttribute="centerX" secondItem="qqG-Bp-p2o" secondAttribute="centerX" id="ZQd-st-dbW"/>
-                            <constraint firstItem="Kpi-Xd-fPI" firstAttribute="centerY" secondItem="qqG-Bp-p2o" secondAttribute="centerY" id="acz-Wg-u0u"/>
+                            <constraint firstItem="Kpi-Xd-fPI" firstAttribute="centerX" secondItem="qqG-Bp-p2o" secondAttribute="centerX" id="91S-rO-dmt"/>
+                            <constraint firstItem="cGj-5e-tjN" firstAttribute="top" secondItem="Kpi-Xd-fPI" secondAttribute="bottom" constant="8" id="EJ6-82-4tj"/>
+                            <constraint firstItem="cGj-5e-tjN" firstAttribute="centerY" secondItem="qqG-Bp-p2o" secondAttribute="centerY" id="UiJ-4Q-EDO"/>
+                            <constraint firstItem="cGj-5e-tjN" firstAttribute="centerX" secondItem="qqG-Bp-p2o" secondAttribute="centerX" id="hhN-wV-l6Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5VS-Bt-xEL"/>
                     </view>
                     <connections>
-                        <segue destination="hEu-Dc-N4N" kind="presentation" identifier="openApp" id="McH-z6-q0a"/>
+                        <segue destination="dsU-Rl-fSQ" kind="presentation" identifier="openAuthorization" id="fkt-RS-dLr"/>
+                        <segue destination="Kou-oK-Nqf" kind="presentation" identifier="openApp" id="bnh-kB-WzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mD1-EQ-IVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1124" y="-228"/>
-        </scene>
-        <!--Main View Controller-->
-        <scene sceneID="8sj-8w-SpQ">
-            <objects>
-                <viewController id="hEu-Dc-N4N" customClass="MR2MainViewController" customModule="Must_Read_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IiJ-Bs-tPx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA8-5F-ojw">
-                                <rect key="frame" x="16" y="67" width="125" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="logOutButtonPressed:" destination="hEu-Dc-N4N" eventType="touchUpInside" id="Kqz-6O-9Ge"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="e9e-CV-cMQ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3fK-Wu-yHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-170.40000000000001" y="187.55622188905548"/>
+            <point key="canvasLocation" x="-1191" y="-985"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OsU-Ts-dTy">
@@ -518,7 +508,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmO-rp-71J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825" y="-600"/>
+            <point key="canvasLocation" x="-170" y="-600"/>
         </scene>
     </scenes>
     <resources>
