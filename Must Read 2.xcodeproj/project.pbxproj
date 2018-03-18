@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5823586CC3F6AD8C753FE5D3 /* Pods_Must_Read_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531634DE655FA635E88BDDF6 /* Pods_Must_Read_2.framework */; };
 		6F55E20EA608EAF0D0BA8435 /* Pods_Must_Read_2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D9BAFE80328AED25EB05DD /* Pods_Must_Read_2UITests.framework */; };
+		8568275B205EC7F7009A9D9D /* MR2StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8568275A205EC7F7009A9D9D /* MR2StartViewController.swift */; };
 		A7D8628E205C558C004C1AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8628D205C558C004C1AFF /* AppDelegate.swift */; };
 		A7D86293205C558C004C1AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D86291205C558C004C1AFF /* Main.storyboard */; };
 		A7D86295205C558C004C1AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D86294205C558C004C1AFF /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		531634DE655FA635E88BDDF6 /* Pods_Must_Read_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Must_Read_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		685004AA13FD3E3B9AB6AE75 /* Pods-Must Read 2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Must Read 2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Must Read 2Tests/Pods-Must Read 2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7476314A66C17B7CA47A5274 /* Pods_Must_Read_2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Must_Read_2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8568275A205EC7F7009A9D9D /* MR2StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MR2StartViewController.swift; sourceTree = "<group>"; };
 		A7D8628A205C558C004C1AFF /* Must Read 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Must Read 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8628D205C558C004C1AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D86292205C558C004C1AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,8 +145,9 @@
 			children = (
 				A7D8628D205C558C004C1AFF /* AppDelegate.swift */,
 				A7F49787205DCDC200801E49 /* MR2LaunchViewController.swift */,
-				A7EA82E5205C6AF700E07B8D /* MR2AuthorizationViewController.swift */,
 				A7F49789205DCF9900801E49 /* MR2MainViewController.swift */,
+				8568275A205EC7F7009A9D9D /* MR2StartViewController.swift */,
+				A7EA82E5205C6AF700E07B8D /* MR2AuthorizationViewController.swift */,
 				A7D86291205C558C004C1AFF /* Main.storyboard */,
 				A7D86294205C558C004C1AFF /* Assets.xcassets */,
 				A7D86296205C558C004C1AFF /* LaunchScreen.storyboard */,
@@ -468,6 +471,7 @@
 			files = (
 				A7D8628E205C558C004C1AFF /* AppDelegate.swift in Sources */,
 				A7F49788205DCDC200801E49 /* MR2LaunchViewController.swift in Sources */,
+				8568275B205EC7F7009A9D9D /* MR2StartViewController.swift in Sources */,
 				A7EA82E6205C6AF700E07B8D /* MR2AuthorizationViewController.swift in Sources */,
 				A7F4978A205DCF9900801E49 /* MR2MainViewController.swift in Sources */,
 			);
