@@ -9,6 +9,8 @@
 import UIKit
 import Parse // Importing Parse library
 
+let mustRed = UIColor(red: 210.0/255.0, green: 40.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

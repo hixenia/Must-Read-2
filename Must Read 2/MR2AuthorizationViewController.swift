@@ -34,13 +34,13 @@ class MR2AuthorizationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func adjustUI() {
-        signUpButton.layer.cornerRadius = 4.0
+        signUpButton.layer.cornerRadius = 8.0
         if mode == "signUp" {
-            signUpButton.setTitle("Sign Up", for: .normal)
-            changeModeButton.setTitle("Already signed up? Log in!", for: .normal)
+            signUpButton.setTitle("Sign up", for: .normal)
+            changeModeButton.alpha = 0.0
         } else {
-            signUpButton.setTitle("Log In", for: .normal)
-            changeModeButton.setTitle("Haven't signed up yet? Register here!", for: .normal)
+            signUpButton.setTitle("Sign in", for: .normal)
+            changeModeButton.alpha = 1.0
         }
     }
     
