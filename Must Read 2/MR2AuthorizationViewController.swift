@@ -156,8 +156,10 @@ class MR2AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == usernameTextField {
-            let allowedCharacters = CharacterSet.alphanumerics
+            var allowedCharacters = CharacterSet.lowercaseLetters
+            allowedCharacters.insert(charactersIn: "0123456789")
             let unwantedStr = string.trimmingCharacters(in: allowedCharacters)
+            
             return unwantedStr.count == 0
         }
         
