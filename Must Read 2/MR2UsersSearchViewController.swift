@@ -9,8 +9,10 @@
 import UIKit
 import Parse
 
-class MR2UsersSearchViewController: UIViewController, UISearchBarDelegate {
+class MR2UsersSearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var usersTableView: UITableView!
+    var usernames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ class MR2UsersSearchViewController: UIViewController, UISearchBarDelegate {
     
     func findUsers() {
         if let searchString = searchBar.text {
+            usernames = [String]()
+            
             let findUser = PFQuery(className: "_User")
             findUser.whereKey("username", contains: searchString.lowercased())
             
@@ -39,10 +43,18 @@ class MR2UsersSearchViewController: UIViewController, UISearchBarDelegate {
                 } else if let objects = objects {
                     print(objects)
                     self.title = "Found users"
+                    
+                    for object in objects {
+                        if let user = object as? PFUser, let usernameString = user.username {
+                            self.usernames.append(usernameString)
+                        }
+                    }
                 } else {
                     print("What's going on?")
                     self.title = "Mysterious error"
                 }
+                
+                self.usersTableView.reloadData()
             }
         }
     }
@@ -75,7 +87,24 @@ class MR2UsersSearchViewController: UIViewController, UISearchBarDelegate {
     //        print("Search is: \(searchBar.text)")
     //    }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return usernames.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = usersTableView.dequeueReusableCell(withIdentifier: "Cell") {
+            cell.textLabel?.text = usernames[indexPath.row]
+            cell.selectionStyle = .none
+            
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
     
     /*
      // MARK: - Navigation
