@@ -13,8 +13,7 @@ class MR2LaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +28,12 @@ class MR2LaunchViewController: UIViewController {
             performSegue(withIdentifier: "openApp", sender: self)
         } else {
             performSegue(withIdentifier: "openAuthorization", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openApp", let tabBarVC = segue.destination as? UITabBarController {
+            tabBarVC.selectedIndex = 2
         }
     }
     

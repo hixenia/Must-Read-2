@@ -9,12 +9,16 @@
 import UIKit
 import Parse
 
-class MR2MainViewController: UIViewController {
+class MR2ProfileViewController: UIViewController {
+    @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        if let currentUser = PFUser.current(), let username = currentUser.username {
+            usernameLabel.text = username
+        }
     }
     
     override func didReceiveMemoryWarning() {

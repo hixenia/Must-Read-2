@@ -37,9 +37,11 @@ class MR2AuthorizationViewController: UIViewController, UITextFieldDelegate {
         signUpButton.layer.cornerRadius = 8.0
         if mode == "signUp" {
             signUpButton.setTitle("Sign up", for: .normal)
+            title = "Sign up"
             changeModeButton.alpha = 0.0
         } else {
             signUpButton.setTitle("Sign in", for: .normal)
+            title = "Sign in"
             changeModeButton.alpha = 1.0
         }
     }
